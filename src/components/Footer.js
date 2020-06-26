@@ -4,7 +4,7 @@ import "../css/mainpage.css";
 function Footer() {
     return (
         <div className="footer-div">
-            Footer
+            showTheTree ©2020 Created by blzbanme
         </div>
     )
 }

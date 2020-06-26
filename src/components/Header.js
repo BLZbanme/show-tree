@@ -4,7 +4,7 @@ import "../css/mainpage.css";
 function Header() {
     return (
         <div className="header-div">
-            Header
+            showTheTree
         </div>
     )
 }

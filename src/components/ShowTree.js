@@ -23,30 +23,68 @@ class ShowTree extends React.Component {
     render() {
         console.log(this.props.inputArray);
         return (
-            <div className="tree-div">
-                <div className="row-div">
-                    {this.renderTreeNodeSpan(0)}
-                </div>
-                <div className="row-div">
-                    {this.renderTreeNodeSpan(1)}
-                    {this.renderTreeNodeSpan(2)}
-                </div>
-                <div className="row-div">
-                    {this.renderTreeNodeSpan(3)}
-                    {this.renderTreeNodeSpan(4)}
-                    {this.renderTreeNodeSpan(5)}
-                    {this.renderTreeNodeSpan(6)}
-                </div>
-                <div className="row-div">
-                    {this.renderTreeNodeSpan(7)}
-                    {this.renderTreeNodeSpan(8)}
-                    {this.renderTreeNodeSpan(9)}
-                    {this.renderTreeNodeSpan(10)}
-                    {this.renderTreeNodeSpan(11)}
-                    {this.renderTreeNodeSpan(12)}
-                    {this.renderTreeNodeSpan(13)}
-                    {this.renderTreeNodeSpan(14)}
-                </div>
+            <div className="tree">
+                <ul>
+                    <li>
+                        {this.renderTreeNodeSpan(0)}
+                        <ul>
+                            <li>
+                                {this.renderTreeNodeSpan(1)}
+                                <ul>
+                                    <li>
+                                        {this.renderTreeNodeSpan(3)}
+                                        <ul>
+                                            <li>
+                                                {this.renderTreeNodeSpan(7)}
+                                            </li>
+                                            <li>
+                                                {this.renderTreeNodeSpan(8)}
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        {this.renderTreeNodeSpan(4)}
+                                        <ul>
+                                            <li>
+                                                {this.renderTreeNodeSpan(9)}
+                                            </li>
+                                            <li>
+                                                {this.renderTreeNodeSpan(10)}
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                {this.renderTreeNodeSpan(2)}
+                                <ul>
+                                    <li>
+                                        {this.renderTreeNodeSpan(5)}
+                                        <ul>
+                                            <li>
+                                                {this.renderTreeNodeSpan(11)}
+                                            </li>
+                                            <li>
+                                                {this.renderTreeNodeSpan(12)}
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        {this.renderTreeNodeSpan(6)}
+                                        <ul>
+                                            <li>
+                                                {this.renderTreeNodeSpan(13)}
+                                            </li>
+                                            <li>
+                                                {this.renderTreeNodeSpan(14)}
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         )
     }

@@ -18,19 +18,25 @@ class TheInput extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="input-div">
                 <input 
                     className="body-input" 
                     type="text"
                     value={this.state.value}
                      onChange={(e) => this.handleChange(e)}
-                    placeholder="请输入数组" 
+                    placeholder="please enter a number array" 
                 />
                 <button 
                     className="body-button" 
                     onClick={() => this.props.onClick(this.state.value)}
                 >
-                    展示树
+                    show
+                </button>
+                <button 
+                    className="body-button" 
+                    onClick={() => this.props.onCopy()}
+                >
+                    copy
                 </button>
             </div>
         )
