@@ -1,0 +1,42 @@
+.main-page {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.header-div {
+    height: 10vh;
+}
+
+.body-div {
+    height: 80vh;
+}
+
+.footer-div {
+    height: 10vh;
+}
+
+.body-button {
+    margin-left: 5vw;
+}
+
+.tree-div {
+    height: 50%;
+    border: .5px solid gray;
+    margin-top: 0;
+}
+
+.node-span {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: .5px solid black;
+    text-align:center
+}
+
+.row-div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
