@@ -8,33 +8,54 @@ import copy  from "copy-to-clipboard";
 class Body extends React.Component {
     constructor(props) {
         super(props);
+        let defaultArray = new Array(15).fill(0).map((e, index) => index + 1); 
         this.state = {
-            inputArray: [],
-            treeCode: ""
+            inputArray: defaultArray,
+            treeCode: this.createTree(defaultArray),
+            wrongMessage: "",
+            didCopy: false
         }
     }
 
     drawTree(value) {
-        if (!value) {
-            return;
+
+        let newArray = this.state.inputArray;
+        let wrongMessage;
+        try {
+            newArray = JSON.parse(value);
+            wrongMessage = "";
         }
-        let newArray = JSON.parse(value);
+        catch(err) {
+            wrongMessage = "Please enter the correct numbers array ";
+        }
 
         if (!Array.isArray(newArray)) {
-            return;
+            wrongMessage = "Please enter the correct numbers array ";
+        }
+
+        if (newArray.length > 15) {
+            wrongMessage = "array's length is too long";
         }
 
         let treeCode = this.createTree(newArray);
 
         this.setState({
             inputArray: newArray,
-            treeCode
+            treeCode,
+            wrongMessage
         });
     }
 
     copyResult() {
         copy(this.state.treeCode);
-        alert(`已copy：${this.state.treeCode}`);
+        this.setState({
+            didCopy: true
+        })
+        setTimeout(() => {
+            this.setState({
+                didCopy: false
+            })
+        }, 500);
     }
 
     createTree(array) {
@@ -43,7 +64,6 @@ class Body extends React.Component {
             return;
         }
         const treeArray = Array.from(array);
-        console.log("treeArray", treeArray);
 
         treeArray.unshift(0);
 
@@ -66,12 +86,17 @@ class Body extends React.Component {
         return (
             <div className="body-div">
                 <TheInput 
+                    inputArray={this.state.inputArray}
                     onClick={(value) => this.drawTree(value)} 
                     onCopy={() => this.copyResult()}
+                    wrongMessage={this.state.wrongMessage}
+                    didCopy={this.state.didCopy}
                 />
-                <ShowTree 
-                    inputArray={this.state.inputArray}
-                />
+                <div className="tree-parent-div">
+                    <ShowTree 
+                        inputArray={this.state.inputArray}
+                    />
+                </div>
                 <CopyTree 
                     treeCode={this.state.treeCode}
                 />

@@ -5,7 +5,7 @@ class CopyTree extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="tree-result-div">
                 <code className="tree-result">
                     {this.props.treeCode}
                 </code>

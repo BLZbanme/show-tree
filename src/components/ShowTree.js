@@ -2,7 +2,6 @@ import React from "react";
 import "../css/mainpage.css";
 
 function TreeNodeSpan(props) {
-    console.log("props", props.value);
     return (
         <span className="node-span">
             {props.value ? props.value : ""}
@@ -21,7 +20,6 @@ class ShowTree extends React.Component {
     }
 
     render() {
-        console.log(this.props.inputArray);
         return (
             <div className="tree">
                 <ul>
