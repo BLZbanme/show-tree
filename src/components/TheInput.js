@@ -40,7 +40,7 @@ class TheInput extends React.Component {
             <div className="input-div">
                 <div className="input-and-alertspan">
                     <input 
-                        className={`body-input ${this.props.hasWrong ? 'wrong-input' : ""}`} 
+                        className={`body-input ${this.props.wrongMessage ? 'wrong-input' : ""}`} 
                         type="text"
                         value={this.state.value}
                         onChange={(e) => this.handleChange(e)}

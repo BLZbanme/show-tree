@@ -18,6 +18,10 @@
 	cursor: pointer;
 }
 
+.iconfont:hover {
+    color: #007fff;
+}
+
 .main-page {
     width: 60vw;
     margin: 0 auto;
@@ -62,12 +66,21 @@ input {
 	width: 50%;
 }
 
+input:focus {
+	border: .5px solid #007fff;
+}
+
+input:hover {
+	border: .5px solid #007fff;
+}
+
+
 /* .body-input {
 	width: 40%;
 } */
 
 .wrong-input {
-	border: .5px solid red;
+	border: .5px solid red !important;
 }
 
 
