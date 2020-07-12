@@ -4,7 +4,7 @@ import "../css/mainpage.css";
 function TreeNodeSpan(props) {
     return (
         <span className="node-span">
-            {props.value ? props.value : ""}
+            {props.value != null ? props.value : ""}
         </span>
     )
 }
