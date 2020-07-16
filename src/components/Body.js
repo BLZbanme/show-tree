@@ -68,7 +68,7 @@ class Body extends React.Component {
         treeArray.unshift(0);
 
         function dfs(index) {
-            if (!treeArray[index]) {
+            if (treeArray[index] == null) {
                 return null;
             }
 
